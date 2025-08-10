@@ -1,28 +1,36 @@
-function footer() {
+import '../css/footer.css';
+
+function Footer() {
   return (
-    <footer className="footer">
-      <div className="container">
+    <div className="footer">
+      <div className="container-footer">
         
-        <img src="text" alt="text" />
+        <div className="footer-top">
+          <div className="footer-left">
+            <div className="footer-logo"></div>
+            <div className="footer-links-vertical">
+              <a href="/About">About us</a>
+              <a href="/About">About us</a>
+              <a href="/About">About us</a>
+            </div>
+          </div>
 
-        <li><a href="/About">About</a></li>
-        <li><a href="/About">About</a></li>
-        <li><a href="/About">About</a></li>
-
-        <div className="row">
-            <li><a href="/About">About</a></li>
-            <li><a href="/About">About</a></li>
-            <li><a href="/About">About</a></li>
-            <li><a href="/Contact">Contact</a></li>
+          <div className="footer-middle">
+            <a href="/About">About us</a>
+            <a href="/About">About us</a>
+            <a href="/About">About us</a>
+            <a href="/About">About us</a>
+            <a href="/About">About us</a>
+            <a href="/Contact" className="contact-btn">Contact</a>
+          </div>
         </div>
-        
+
         <div className="footer-under-text">
-            <h1>NewWhite</h1>
+          <h1><em>NewWhite</em></h1>
         </div>
-        
       </div>
-    </footer>
+    </div>
   );
 }
 
-export default footer;
+export default Footer;

@@ -66,7 +66,7 @@
     align-items: center;
     justify-content: space-between;
     color: #B3A297;
-    padding-left: 30vh;
+    padding-left: 40vh;
     padding-right: 40vh;
     box-sizing: border-box;
     height: 100vh;
@@ -87,8 +87,8 @@
 }
 
 .ImageTwo {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     background-color: #B3A297;
     display: flex;
     align-items: center;
@@ -104,12 +104,83 @@
     object-fit: cover;
 }
 
-.containerThree{
+.containerThree {
     width: 100%;
-    height: 70vh;
+    min-height: 70vh;
     background-color: #F4F3EE;
     border-radius: 8px;
     color: #B3A297;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 0;
+}
+
+.containerThree h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 3rem;
+    padding-bottom: 4vh;
+    font-weight: 400;
+}
+
+.threeGrid {
+    display: flex;
+    gap: 40px 60px;
+    width: 80%;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.threeGrid > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.desc {
+    text-align: center;
+    color: #B3A297;
+    font-size: 1rem;
+    margin: 16px 0 0 0;
+    align-self: center;
+}
+
+
+.item {
+    background-color: antiquewhite;
+    padding: 30px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #5E534D;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.item-img {
+    width: 25vh;
+    height: 50vh;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.desc {
+    text-align: center;
+    color: #B3A297;
+    font-size: 1rem;
+    margin: 0;
+    align-self: center;
+}
+
+.item{
+    object-fit: cover;
+    background-color: #B3A297;
+    margin-bottom: 3vh;
 }
 
 @media (max-width: 768px) {
@@ -130,3 +201,97 @@
         height: 200px;
     }
 }
+
+@media (max-width: 992px) {
+    /* Container One */
+    .containerOne {
+        width: 90%;
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .containerOne h1 {
+        font-size: 3.5rem;
+        padding-top: 15vh;
+    }
+
+    .containerOne p {
+        width: 70%;
+        font-size: 1rem;
+    }
+
+    .containerTwo {
+        flex-direction: column;
+        padding: 40px 20px;
+        height: auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .TextTwo {
+        margin-bottom: 40px;
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .ImageTwo {
+        width: 300px;
+        height: 300px;
+    }
+
+    .threeGrid {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .item-img {
+        width: 200px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .containerOne h1 {
+        font-size: 2.5rem;
+        padding-top: 10vh;
+    }
+
+    .containerOne p {
+        width: 90%;
+        font-size: 0.9rem;
+    }
+
+    .containerOne button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .containerTwo {
+        padding: 20px 10px;
+    }
+
+    .TextTwo h4 {
+        font-size: 1.5rem;
+    }
+
+    .ImageTwo {
+        width: 200px;
+        height: 200px;
+    }
+
+    .containerThree h1 {
+        font-size: 2rem;
+        padding-bottom: 2vh;
+    }
+
+    .item-img {
+        width: 160px;
+        height: 240px;
+    }
+
+    .desc {
+        font-size: 0.9rem;
+    }
+}
+

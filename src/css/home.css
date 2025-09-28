@@ -128,7 +128,6 @@
 .threeGrid {
     display: flex;
     gap: 40px 60px;
-    width: 80%;
     margin: 0 auto;
     align-items: start;
 }

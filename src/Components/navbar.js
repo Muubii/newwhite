@@ -1,16 +1,21 @@
+import { Link } from 'react-router-dom';
 import '../css/navbar.css';
 
-function navbar() {
+function Navbar() {
   return (
     <nav className="navbar">
-      <h1>NewWhite</h1>
-      <ul className='nav-links'>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-      </ul>
+      <Link to="/" style={{ textDecoration: 'none' }}>
+        <h1>NewWhite</h1>
+      </Link>
+      <div className="nav-links">
+        <Link to="/shop">Shop</Link>
+        <Link to="/clothes">Clothes</Link>
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
+        <Link to="/cart">Cart</Link>
+      </div>
     </nav>
   );
 }
 
-export default navbar;
+export default Navbar;

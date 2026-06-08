@@ -1,66 +1,74 @@
 .navbar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;      
-    justify-content: center; 
-    height: 80px;          
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; /* ← KEY FIX: logo left, links right */
+  height: 80px;
+  background-color: #2C1F14;
+  padding: 0 60px; /* ← adds breathing room on sides */
+  box-sizing: border-box;
 }
 
 .navbar h1 {
-    font-size: 2rem;
-    color: #736464;
-    font-weight: 400;
-    margin-right: 20px;
+  font-size: 2rem;
+  color: #E8C98A;
+  font-weight: 400;
+  margin: 0;
+  white-space: nowrap; /* ← prevents wrapping */
+}
+
+.cart-count {
+  background-color: #C0865A;
+  color: #fff5ed;
+  font-size: 0.75rem;
+  padding: 1px 7px;
+  border-radius: 20px;
+  margin-left: 4px;
 }
 
 .nav-links {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 70px;
-    background-color: #C9C9C9;
-    border-radius: 20px;        
-    width: 25vw;
-    justify-content: center;  
-    height: 5vh;
-    text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  text-decoration: none;
 }
 
 .nav-links a {
-    color: #403A35;
-    text-decoration: none;
-    font-size: 1.2rem;
+  color: #B89A72;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  color: #E8C98A;
 }
 
 @media (max-width: 992px) {
-    .nav-links {
-        width: 50vw;
-        gap: 30px;
-    }
-
-    .navbar h1 {
-        font-size: 1.5rem;
-        margin-right: 10px;
-    }
+  .navbar {
+    padding: 0 20px;
+  }
+  .nav-links {
+    gap: 20px;
+  }
+  .navbar h1 {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 576px) {
-    .navbar {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
-    }
-
-    .nav-links {
-        flex-wrap: wrap;
-        width: 100%;
-        gap: 15px;
-        height: auto;
-        padding: 10px;
-    }
-
-    .navbar h1 {
-        margin: 0 0 10px 0;
-        font-size: 1.3rem;
-    }
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 14px 16px;
+    gap: 10px;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    width: 100%;
+  }
 }

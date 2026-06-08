@@ -9,16 +9,16 @@ function Footer() {
           <div className="footer-left">
             <div className="footer-logo"></div>
             <div className="footer-links-vertical">
-              <Link to="/shop">Shop</Link>
-              <Link to="/about">About us</Link>
               <Link to="/clothes">Clothes</Link>
+              <Link to="/about">About us</Link>
+              <Link to="/contact">Contact</Link>
             </div>
           </div>
           <div className="footer-middle">
-            <Link to="/shop">New arrivals</Link>
-            <Link to="/shop">Men</Link>
-            <Link to="/shop">Women</Link>
-            <Link to="/shop">Sale</Link>
+            <Link to="/clothes">New arrivals</Link>
+            <Link to="/clothes">Tops</Link>
+            <Link to="/clothes">Bottoms</Link>
+            <Link to="/clothes">Outerwear</Link>
             <Link to="/contact" className="contact-btn">Contact</Link>
           </div>
         </div>

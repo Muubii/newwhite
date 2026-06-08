@@ -7,8 +7,10 @@ import Navbar from '../Components/navbar';
 import Footer from '../Components/footer';
 
 function Cart() {
-  const { cart, removeFromCart } = useContext(CartContext);
+  const { cart, removeFromCart, clearCart } = useContext(CartContext);
   const [ordered, setOrdered] = useState(false);
+  const [orderedItems, setOrderedItems] = useState([]);
+  const [orderedForm, setOrderedForm] = useState(null);
   const [form, setForm] = useState({
     name: '', email: '', address: '', city: '', postal: '',
   });
@@ -22,18 +24,105 @@ function Cart() {
       alert('Please fill in all fields before placing your order.');
       return;
     }
+    setOrderedItems([...cart]);
+    setOrderedForm({ ...form });
     setOrdered(true);
+    if (clearCart) clearCart();
   };
+
+  const orderTotal = orderedItems.reduce(
+    (sum, item) => sum + parseFloat(item.price.replace('€', '')), 0
+  );
+
+  const orderNumber = `NW-${Date.now().toString().slice(-6)}`;
 
   if (ordered) {
     return (
       <div className="container">
         <Navbar />
-        <div className="cart-success">
-          <div className="success-icon">✓</div>
-          <h1>Order Placed!</h1>
-          <p>Thank you, <strong>{form.name}</strong>. A confirmation will be sent to <strong>{form.email}</strong>.</p>
-          <Link to="/shop"><button className="cart-btn-primary">Continue Shopping</button></Link>
+        <div className="confirm-page">
+
+          {/* Header */}
+          <div className="confirm-header">
+            <div className="confirm-check">✓</div>
+            <h1>Order Confirmed!</h1>
+            <p className="confirm-sub">
+              Thank you, <strong>{orderedForm.name}</strong>. A confirmation will be sent to{' '}
+              <strong>{orderedForm.email}</strong>.
+            </p>
+            <span className="confirm-order-number">Order #{orderNumber}</span>
+          </div>
+
+          <div className="confirm-body">
+
+            {/* Items */}
+            <div className="confirm-items-block">
+              <h2>Items ordered</h2>
+              <div className="confirm-items">
+                {orderedItems.map((item, index) => (
+                  <div className="confirm-item-row" key={index}>
+                    <img src={item.image} alt={item.name} className="confirm-item-img" />
+                    <div className="confirm-item-info">
+                      <h3>{item.name}</h3>
+                      <p>Size: <span>{item.size}</span></p>
+                      <p>Category: <span>{item.category}</span></p>
+                    </div>
+                    <p className="confirm-item-price">{item.price}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Order total */}
+              <div className="confirm-totals">
+                <div className="confirm-total-row">
+                  <span>Subtotal</span>
+                  <span>€{orderTotal.toFixed(2)}</span>
+                </div>
+                <div className="confirm-total-row">
+                  <span>Shipping</span>
+                  <span className="free-shipping">Free</span>
+                </div>
+                <div className="confirm-total-row confirm-grand-total">
+                  <span>Total paid</span>
+                  <span>€{orderTotal.toFixed(2)}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Delivery details */}
+            <div className="confirm-details-block">
+              <h2>Delivery details</h2>
+              <div className="confirm-detail-card">
+                <p className="confirm-detail-label">Full name</p>
+                <p className="confirm-detail-value">{orderedForm.name}</p>
+
+                <p className="confirm-detail-label">Email</p>
+                <p className="confirm-detail-value">{orderedForm.email}</p>
+
+                <p className="confirm-detail-label">Shipping address</p>
+                <p className="confirm-detail-value">
+                  {orderedForm.address}<br />
+                  {orderedForm.postal} {orderedForm.city}
+                </p>
+
+                <p className="confirm-detail-label">Estimated delivery</p>
+                <p className="confirm-detail-value">3–5 business days</p>
+              </div>
+
+              <div className="confirm-trust">
+                <span>🔒 Payment secured</span>
+                <span>🚚 Free shipping</span>
+                <span>↩️ Easy returns</span>
+              </div>
+
+              <Link to="/clothes">
+                <button className="cart-btn-primary full-width" style={{ marginTop: '24px' }}>
+                  Continue Shopping
+                </button>
+              </Link>
+            </div>
+
+          </div>
         </div>
         <Footer />
       </div>
@@ -57,7 +146,9 @@ function Cart() {
 
             {/* LEFT: items */}
             <div className="cart-left">
-              <h2 className="cart-section-title">Your Cart <span className="cart-badge">{cart.length}</span></h2>
+              <h2 className="cart-section-title">
+                Your Cart <span className="cart-badge">{cart.length}</span>
+              </h2>
 
               <div className="cart-items">
                 {cart.map((item, index) => (

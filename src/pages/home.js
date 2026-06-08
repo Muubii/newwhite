@@ -15,7 +15,7 @@ function Home() {
         <div className="containerOne__content">
           <h1>NewWhite</h1>
           <p>Discover timeless clothing crafted for everyday elegance...</p>
-          <Link to="/shop"><button>Go to store</button></Link>
+          <Link to="/clothes"><button>Go to store</button></Link>
         </div>
       </div>
       {/* rest of your Home content stays the same */}

@@ -60,15 +60,19 @@
 }
 
 .contact-btn {
+  color: #fff5ed !important;
   background-color: #C0865A;
-  padding: 5px 20px;
+  padding: 8px 20px;
   border-radius: 8px;
-  color: #fff5ed;
-  transition: background-color 0.2s;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s, transform 0.15s;
 }
 
 .contact-btn:hover {
   background-color: #A8714A;
+  transform: translateY(-2px);
+  color: #fff5ed !important;
 }
 
 .footer-under-text h1 {

@@ -2,94 +2,66 @@ import { useState, useContext } from 'react';
 import { CartContext } from '../App';
 import '../css/pages.css';
 import '../css/clothes.css';
+import items from '../data/items';
 import Navbar from '../Components/navbar';
 import Footer from '../Components/footer';
 
-const clothes = [
-  {
-    id: 1,
-    name: 'Essential Tee',
-    category: 'Tops',
-    price: '€24.99',
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    description: 'Soft, breathable cotton in neutral tones. A wardrobe staple for every occasion.',
-    image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&auto=format&fit=crop',
-  },
-  {
-    id: 2,
-    name: 'Classic Overshirt',
-    category: 'Tops',
-    price: '€49.99',
-    sizes: ['S', 'M', 'L', 'XL'],
-    description: 'A versatile layer that works from morning coffee to an evening out.',
-    image: 'https://images.unsplash.com/photo-1589310243389-96a5483213a8?w=600&auto=format&fit=crop',
-  },
-  {
-    id: 3,
-    name: 'Slim Chinos',
-    category: 'Bottoms',
-    price: '€39.99',
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    description: 'Tailored fit with stretch fabric. Dress them up or down effortlessly.',
-    image: 'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=600&auto=format&fit=crop',
-  },
-  {
-    id: 4,
-    name: 'Linen Shirt',
-    category: 'Tops',
-    price: '€34.99',
-    sizes: ['XS', 'S', 'M', 'L'],
-    description: 'Lightweight and relaxed, made for warm days and easy styling.',
-    image: 'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=600&auto=format&fit=crop',
-  },
-  {
-    id: 5,
-    name: 'Relaxed Hoodie',
-    category: 'Tops',
-    price: '€44.99',
-    sizes: ['S', 'M', 'L', 'XL'],
-    description: 'Cozy heavyweight cotton. The kind of hoodie you reach for every day.',
-    image: 'https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=600&auto=format&fit=crop',
-  },
-  {
-    id: 6,
-    name: 'Everyday Denim',
-    category: 'Bottoms',
-    price: '€54.99',
-    sizes: ['S', 'M', 'L', 'XL'],
-    description: 'Classic straight-leg denim with a clean, minimal finish.',
-    image: 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=600&auto=format&fit=crop',
-  },
-  {
-    id: 7,
-    name: 'Tailored Jacket',
-    category: 'Outerwear',
-    price: '€89.99',
-    sizes: ['S', 'M', 'L'],
-    description: 'A clean silhouette jacket that elevates any outfit instantly.',
-    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&auto=format&fit=crop',
-  },
-  {
-    id: 8,
-    name: 'Basic Sweatshirt',
-    category: 'Tops',
-    price: '€32.99',
-    sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
-    description: 'A clean, unbranded sweatshirt in earthy tones. Simple done right.',
-    image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&auto=format&fit=crop',
-  },
-];
+function CardWithArrows({ item, onOpen }) {
+  const [activeImg, setActiveImg] = useState(0);
+
+  const prev = (e) => {
+    e.stopPropagation();
+    setActiveImg((i) => (i === 0 ? item.images.length - 1 : i - 1));
+  };
+
+  const next = (e) => {
+    e.stopPropagation();
+    setActiveImg((i) => (i === item.images.length - 1 ? 0 : i + 1));
+  };
+
+  return (
+    <div className="shop-card" onClick={() => onOpen(item)}>
+      <div className="shop-card-img-wrap">
+        <img src={item.images[activeImg]} alt={item.name} />
+        <span className="shop-card-tag">{item.category}</span>
+
+        {item.images.length > 1 && (
+          <>
+            <button className="card-arrow card-arrow-prev" onClick={prev} aria-label="Previous">‹</button>
+            <button className="card-arrow card-arrow-next" onClick={next} aria-label="Next">›</button>
+            <div className="card-dots">
+              {item.images.map((_, i) => (
+                <span
+                  key={i}
+                  className={`card-dot ${activeImg === i ? 'active' : ''}`}
+                  onClick={(e) => { e.stopPropagation(); setActiveImg(i); }}
+                />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+
+      <div className="shop-card-body">
+        <h3>{item.name}</h3>
+        <p className="shop-card-price">{item.price}</p>
+        <p className="shop-card-hint">Click to view details</p>
+      </div>
+    </div>
+  );
+}
 
 function Clothes() {
-  // ← GET addToCart FROM CONTEXT
   const { addToCart } = useContext(CartContext);
 
   const [selected, setSelected] = useState(null);
+  const [activeImg, setActiveImg] = useState(0);
   const [selectedSize, setSelectedSize] = useState(null);
   const [added, setAdded] = useState(false);
 
   const openDetail = (item) => {
     setSelected(item);
+    setActiveImg(0);
     setSelectedSize(null);
     setAdded(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -97,26 +69,51 @@ function Clothes() {
 
   const closeDetail = () => {
     setSelected(null);
+    setActiveImg(0);
     setSelectedSize(null);
     setAdded(false);
   };
 
   const handleAddToCart = () => {
     if (!selectedSize) return;
-    // ← THIS NOW ADDS TO GLOBAL CART
     addToCart({ ...selected, size: selectedSize });
     setAdded(true);
   };
 
+  const prevImg = () =>
+    setActiveImg((prev) => (prev === 0 ? selected.images.length - 1 : prev - 1));
+
+  const nextImg = () =>
+    setActiveImg((prev) => (prev === selected.images.length - 1 ? 0 : prev + 1));
+
   return (
     <div className="container">
       <Navbar />
-      <div className="page">
-        {selected ? (
+
+      {selected ? (
+        /* ── DETAIL VIEW ── */
+        <div className="shop-body">
           <div className="detail-view">
             <button className="back-btn" onClick={closeDetail}>← Back to all clothes</button>
             <div className="detail-inner">
-              <img src={selected.image} alt={selected.name} className="detail-img" />
+
+              <div className="detail-gallery">
+                <div className="detail-carousel">
+                  <button className="carousel-btn carousel-prev" onClick={prevImg} aria-label="Previous">‹</button>
+                  <img src={selected.images[activeImg]} alt={selected.name} className="detail-main-img" />
+                  <button className="carousel-btn carousel-next" onClick={nextImg} aria-label="Next">›</button>
+                  <div className="carousel-dots">
+                    {selected.images.map((_, i) => (
+                      <span
+                        key={i}
+                        className={`carousel-dot ${activeImg === i ? 'active' : ''}`}
+                        onClick={() => setActiveImg(i)}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+
               <div className="detail-info">
                 <span className="detail-category">{selected.category}</span>
                 <h1>{selected.name}</h1>
@@ -143,31 +140,43 @@ function Clothes() {
                 >
                   {added ? '✓ Added to cart' : 'Add to cart'}
                 </button>
-                {!selectedSize && (
-                  <p className="size-warning">Please select a size first</p>
-                )}
+                {!selectedSize && <p className="size-warning">Please select a size first</p>}
               </div>
+
             </div>
           </div>
-        ) : (
-          <>
-            <h1>All Clothes</h1>
-            <p>Click any item to see details.</p>
-            <div className="clothes-grid">
-              {clothes.map((item) => (
-                <div className="clothes-card" key={item.id} onClick={() => openDetail(item)}>
-                  <img src={item.image} alt={item.name} />
-                  <div className="clothes-card-info">
-                    <span className="clothes-tag">{item.category}</span>
-                    <h3>{item.name}</h3>
-                    <p>{item.price}</p>
-                  </div>
-                </div>
+        </div>
+      ) : (
+        /* ── GRID VIEW ── */
+        <>
+          <div className="clothes-banner">
+            <div className="clothes-banner-text">
+              <p className="clothes-banner-label">New Collection</p>
+              <h1>Essentials, refined.</h1>
+              <p>Clean cuts and quality fabrics — use ‹ › on cards to browse views.</p>
+            </div>
+            <div className="clothes-banner-imgs">
+              <img
+                src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=500&auto=format&fit=crop"
+                alt="Collection preview"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=500&auto=format&fit=crop"
+                alt="Collection preview 2"
+              />
+            </div>
+          </div>
+
+          <div className="shop-body">
+            <div className="shop-grid">
+              {items.map((item) => (
+                <CardWithArrows key={item.id} item={item} onOpen={openDetail} />
               ))}
             </div>
-          </>
-        )}
-      </div>
+          </div>
+        </>
+      )}
+
       <Footer />
     </div>
   );

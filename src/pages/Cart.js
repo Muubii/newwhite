@@ -5,6 +5,12 @@ import '../css/pages.css';
 import '../css/cart.css';
 import Navbar from '../Components/navbar';
 import Footer from '../Components/footer';
+import CheckIcon from '@mui/icons-material/Check';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
+import ReplayOutlinedIcon from '@mui/icons-material/ReplayOutlined';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+import CloseIcon from '@mui/icons-material/Close';
 
 function Cart() {
   const { cart, removeFromCart, clearCart } = useContext(CartContext);
@@ -43,7 +49,9 @@ function Cart() {
         <div className="confirm-page">
 
           <div className="confirm-header">
-            <div className="confirm-check">✓</div>
+            <div className="confirm-check">
+              <CheckIcon sx={{ fontSize: 32, color: '#fff' }} />
+            </div>
             <h1>Order Confirmed!</h1>
             <p className="confirm-sub">
               Thank you, <strong>{orderedForm.name}</strong>. A confirmation will be sent to{' '}
@@ -106,9 +114,9 @@ function Cart() {
               </div>
 
               <div className="confirm-trust">
-                <span>🔒 Payment secured</span>
-                <span>🚚 Free shipping</span>
-                <span>↩️ Easy returns</span>
+                <span><LockOutlinedIcon sx={{ fontSize: 16, verticalAlign: 'middle', marginRight: '4px' }} />Payment secured</span>
+                <span><LocalShippingOutlinedIcon sx={{ fontSize: 16, verticalAlign: 'middle', marginRight: '4px' }} />Free shipping</span>
+                <span><ReplayOutlinedIcon sx={{ fontSize: 16, verticalAlign: 'middle', marginRight: '4px' }} />Easy returns</span>
               </div>
 
               <Link to="/clothes">
@@ -132,7 +140,9 @@ function Cart() {
 
         {cart.length === 0 ? (
           <div className="cart-empty">
-            <div className="empty-bag-icon">🛍️</div>
+            <div className="empty-bag-icon">
+              <ShoppingBagOutlinedIcon sx={{ fontSize: 64, color: '#C0865A' }} />
+            </div>
             <h2>Your cart is empty</h2>
             <p>Looks like you haven't added anything yet.</p>
             <Link to="/clothes"><button className="cart-btn-primary">Browse Clothes</button></Link>
@@ -156,7 +166,9 @@ function Cart() {
                     </div>
                     <div className="cart-row-right">
                       <p className="cart-row-price">{item.price}</p>
-                      <button className="cart-remove" onClick={() => removeFromCart(index)} title="Remove">✕</button>
+                      <button className="cart-remove" onClick={() => removeFromCart(index)} title="Remove">
+                        <CloseIcon sx={{ fontSize: 18 }} />
+                      </button>
                     </div>
                   </div>
                 ))}
@@ -204,9 +216,9 @@ function Cart() {
               <div className="checkout-divider" />
 
               <div className="checkout-trust">
-                <span>🔒 Secure checkout</span>
-                <span>🚚 Free shipping</span>
-                <span>↩️ Easy returns</span>
+                <span><LockOutlinedIcon sx={{ fontSize: 16, verticalAlign: 'middle', marginRight: '4px' }} />Secure checkout</span>
+                <span><LocalShippingOutlinedIcon sx={{ fontSize: 16, verticalAlign: 'middle', marginRight: '4px' }} />Free shipping</span>
+                <span><ReplayOutlinedIcon sx={{ fontSize: 16, verticalAlign: 'middle', marginRight: '4px' }} />Easy returns</span>
               </div>
 
               <button className="cart-btn-primary full-width" onClick={handleOrder}>

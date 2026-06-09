@@ -1,7 +1,7 @@
 import { useState, createContext } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './css/animations.css';
-import Home from './pages/Home';
+import Home from './pages/home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Clothes from './pages/Clothes';

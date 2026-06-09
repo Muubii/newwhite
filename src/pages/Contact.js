@@ -3,6 +3,10 @@ import '../css/contact.css';
 import Navbar from '../Components/navbar';
 import Footer from '../Components/footer';
 import { useState } from 'react';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
+import CheckIcon from '@mui/icons-material/Check';
 
 function Contact() {
   const [sent, setSent] = useState(false);
@@ -32,17 +36,23 @@ function Contact() {
 
         <div className="contact-info">
           <div className="contact-card">
-            <div className="contact-card-icon">✉️</div>
+            <div className="contact-card-icon">
+              <EmailOutlinedIcon sx={{ fontSize: 32, color: '#C0865A' }} />
+            </div>
             <h3>Email</h3>
             <p>newwhite@gmail.com</p>
           </div>
           <div className="contact-card">
-            <div className="contact-card-icon">📍</div>
+            <div className="contact-card-icon">
+              <LocationOnOutlinedIcon sx={{ fontSize: 32, color: '#C0865A' }} />
+            </div>
             <h3>Location</h3>
             <p>Netherlands</p>
           </div>
           <div className="contact-card">
-            <div className="contact-card-icon">🕐</div>
+            <div className="contact-card-icon">
+              <AccessTimeOutlinedIcon sx={{ fontSize: 32, color: '#C0865A' }} />
+            </div>
             <h3>Response time</h3>
             <p>Within 24 hours</p>
           </div>
@@ -51,7 +61,9 @@ function Contact() {
         <div className="contact-form-wrap">
           {sent ? (
             <div className="contact-success">
-              <div className="contact-success-icon">✓</div>
+              <div className="contact-success-icon">
+                <CheckIcon sx={{ fontSize: 32 }} />
+              </div>
               <h2>Message Sent!</h2>
               <p>Thank you for reaching out. We'll get back to you within 24 hours.</p>
             </div>

@@ -9,7 +9,7 @@ const items = [
     image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&auto=format&fit=crop',
     images: [
       'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1622445275463-afa2ab738c34?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=600&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&auto=format&fit=crop',
     ],
   },
@@ -23,8 +23,8 @@ const items = [
     image: 'https://images.unsplash.com/photo-1589310243389-96a5483213a8?w=600&auto=format&fit=crop',
     images: [
       'https://images.unsplash.com/photo-1589310243389-96a5483213a8?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1604644401890-0bd678c83788?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1598032895397-b9472444bf93?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1594938298603-c8148c4b4abe?w=600&auto=format&fit=crop',
     ],
   },
   {
@@ -34,11 +34,11 @@ const items = [
     category: 'Bottoms',
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     description: 'Tailored fit with stretch fabric. Dress them up or down effortlessly.',
-    image: 'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=600&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop',
     images: [
-      'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1560243563-062bfc001d68?w=600&auto=format&fit=crop',
     ],
   },
   {
@@ -52,7 +52,7 @@ const items = [
     images: [
       'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=600&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1563630423918-b58bef47d19b?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1602810316693-3667c854239a?w=600&auto=format&fit=crop',
     ],
   },
   {
@@ -66,7 +66,7 @@ const items = [
     images: [
       'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=600&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1578768079052-aa76e52ff62e?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1614495640153-72c2f80c2c3a?w=600&auto=format&fit=crop',
     ],
   },
   {
@@ -76,10 +76,10 @@ const items = [
     category: 'Bottoms',
     sizes: ['S', 'M', 'L', 'XL'],
     description: 'Classic straight-leg denim with a clean, minimal finish.',
-    image: 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=600&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&auto=format&fit=crop',
     images: [
-      'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=600&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=600&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1475178626620-a4d074967452?w=600&auto=format&fit=crop',
     ],
   },
@@ -94,7 +94,7 @@ const items = [
     images: [
       'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1548624313-0396a50cf4cd?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1519716137558-4c60a6a95f3c?w=600&auto=format&fit=crop',
     ],
   },
   {
@@ -111,6 +111,62 @@ const items = [
       'https://images.unsplash.com/photo-1578587018452-892bacefd3f2?w=600&auto=format&fit=crop',
     ],
   },
+  {
+    id: 9,
+    name: 'Cotton Polo',
+    price: '€29.99',
+    category: 'Tops',
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    description: 'A refined polo in piqué cotton. Smart casual at its best.',
+    image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&auto=format&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1622445275576-721325763afe?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1622445275309-d6f4cfdbb28e?w=600&auto=format&fit=crop',
+    ],
+  },
+  {
+    id: 10,
+    name: 'Cargo Trousers',
+    price: '€59.99',
+    category: 'Bottoms',
+    sizes: ['S', 'M', 'L', 'XL'],
+    description: 'Relaxed-fit cargo trousers with subtle utility details.',
+    image: 'https://images.unsplash.com/photo-1517445312882-bc9910d016b7?w=600&auto=format&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1517445312882-bc9910d016b7?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1605518216938-7c31b7b14ad0?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop',
+    ],
+  },
+  {
+    id: 11,
+    name: 'Wool Overcoat',
+    price: '€129.99',
+    category: 'Outerwear',
+    sizes: ['S', 'M', 'L', 'XL'],
+    description: 'A long-line wool blend coat. Timeless structure for colder seasons.',
+    image: 'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=600&auto=format&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1548126032-079a0fb0099d?w=600&auto=format&fit=crop',
+    ],
+  },
+  {
+    id: 12,
+    name: 'Canvas Tote',
+    price: '€19.99',
+    category: 'Accessories',
+    sizes: ['One Size'],
+    description: 'Heavy-duty canvas tote with a clean minimal print. Built to last.',
+    image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&auto=format&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1591561954557-26941169b49e?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1614179818511-f65577b8e900?w=600&auto=format&fit=crop',
+    ],
+  },
 ];
 
-export default items;
+export default items; 

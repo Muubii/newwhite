@@ -60,7 +60,7 @@ function Home() {
         <div className="TextTwo">
           <span className="section-label">Our story</span>
           <h4>Who we are</h4>
-          <p>NewWhite was founded with a simple idea: great clothing doesn't have to be complicated. We design minimalist essentials for people who value quality over quantity — wardrobe staples you'll reach for again and again.</p>
+          <p>NewWhite was born from a simple idea — that everyday clothing should feel just as good as it looks. We design refined, effortless pieces built from quality fabrics that stand the test of time. No fast fashion, no empty trends. Just clothing made with intention, for the life you actually live.</p>
           <Link to="/about" className="text-link">Learn more →</Link>
         </div>
         <div className="ImageTwo">

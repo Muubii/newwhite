@@ -1,70 +1,140 @@
-# Getting Started with Create React App
+# NewWhite — React Storefront
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A minimalist clothing brand web app built with React and React Router. Clean warm aesthetic with a dark brown / gold / beige colour palette.
 
-## Available Scripts
+***
 
-In the project directory, you can run:
+## Tech Stack
 
-### `npm start`
+| Tool | Purpose |
+|------|---------|
+| React 18 | UI framework |
+| React Router v6 | Client-side routing |
+| Context API | Global cart state |
+| CSS (vanilla) | Styling — no Tailwind or UI lib |
+| Create React App | Project scaffold |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+***
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+```
+src/
+├── pages/
+│   ├── Home.jsx          # Landing page (hero, who we are, collection slideshow)
+│   ├── Clothes.jsx       # Full clothes listing
+│   ├── About.jsx         # Brand story
+│   ├── Contact.jsx       # Contact info
+│   └── Cart.jsx          # Shopping cart
+│
+├── Components/
+│   ├── Navbar.jsx        # Sticky top nav with cart count badge
+│   └── Footer.jsx        # Footer with ✦ logo, links, NewWhite wordmark
+│
+├── css/
+│   ├── home.css          # All homepage section styles
+│   ├── navbar.css        # Navbar styles
+│   ├── footer.css        # Footer styles
+│   ├── animations.css    # Shared scroll reveal animations
+│   └── pages.css         # Shared styles for inner pages
+│
+├── source/
+│   └── vid.mp4           # Hero background video
+│
+├── App.jsx               # Router + CartContext provider
+└── index.js              # React entry point
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+public/
+└── index.html            # Canvas-generated ✦ favicon injected at runtime
+```
 
-### `npm run build`
+***
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Routes
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Path | Page | Description |
+|------|------|-------------|
+| `/` | Home | Hero video, Who We Are, Collection slideshow |
+| `/clothes` | Clothes | Full product listing |
+| `/about` | About | Brand story |
+| `/contact` | Contact | Contact details |
+| `/cart` | Cart | Cart items, remove, clear |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+***
 
-### `npm run eject`
+## Cart System
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Cart state is managed globally via React Context (`CartContext`) defined in `App.jsx`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```js
+const { cart, addToCart, removeFromCart, clearCart } = useContext(CartContext);
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- `addToCart(item)` — adds an item object to the cart array
+- `removeFromCart(index)` — removes item at given index
+- `clearCart()` — empties the entire cart
+- Cart count is shown as a badge in the Navbar when `cart.length > 0`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+***
 
-## Learn More
+## Favicon
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The favicon is generated at runtime via an HTML Canvas script in `public/index.html`. No image file needed.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Background:** `#2C1F14` (dark brown, rounded square)
+- **Icon:** `✦` in `#E8C98A` (warm gold)
+- Any existing `<link rel="icon">` is removed before injection to avoid conflicts
 
-### Code Splitting
+***
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Colour Palette
 
-### Analyzing the Bundle Size
+| Name | Hex | Used for |
+|------|-----|---------|
+| Dark Brown | `#2C1F14` | Navbar, footer, buttons |
+| Warm Brown | `#3B2A1A` | Who We Are section background |
+| Gold | `#E8C98A` | Headings, accents, ✦ logo |
+| Tan | `#C9A97E` | Body text on dark backgrounds |
+| Muted Tan | `#B89A72` | Navigation links |
+| Beige | `#F5EDD8` | Page background |
+| Off-white | `#FAF7F1` | Collection right panel |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+***
 
-### Making a Progressive Web App
+## Collection Slideshow
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The left panel of the Collection section auto-cycles through 4 images every **5 seconds** with a fade + Ken Burns zoom transition. Users can also click the dot indicators to jump to any slide manually.
 
-### Advanced Configuration
+```js
+useEffect(() => {
+  const timer = setInterval(() => {
+    setActiveSlide((prev) => (prev + 1) % slideImages.length);
+  }, 5000);
+  return () => clearInterval(timer);
+}, []);
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+***
 
-### Deployment
+## Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+# Install dependencies
+npm install
 
-### `npm run build` fails to minify
+# Start development server
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Build for production
+npm run build
+```
+
+> Make sure `src/source/vid.mp4` exists — the hero section requires a video file for the background.
+
+***
+
+## Notes
+
+- `/returns` and `/shop` are not standalone routes — footer links pointing to them redirect to `/clothes` and `/` respectively
+- All navigation uses `<Link to="...">` from React Router — no `<a href>` — to prevent full page reloads
+- No `localStorage` or `sessionStorage` is used; cart state resets on page refresh

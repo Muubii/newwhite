@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 
-/* Layout: side by side on desktop */
 .cart-layout {
   display: flex;
   gap: 40px;
@@ -28,7 +27,6 @@
   top: 100px;
 }
 
-/* Section titles */
 .cart-section-title {
   font-size: 1.4rem;
   font-weight: 600;
@@ -48,7 +46,6 @@
   font-weight: 500;
 }
 
-/* Cart rows */
 .cart-items {
   display: flex;
   flex-direction: column;
@@ -135,7 +132,6 @@
   color: #fff;
 }
 
-/* Order summary */
 .cart-summary {
   background-color: #fff8f0;
   border-radius: 14px;
@@ -168,7 +164,6 @@
   font-weight: 600;
 }
 
-/* Checkout form */
 .checkout-fields {
   display: flex;
   flex-direction: column;
@@ -226,7 +221,6 @@
   margin-bottom: 20px;
 }
 
-/* Buttons */
 .cart-btn-primary {
   padding: 14px 28px;
   background-color: #C0865A;
@@ -252,7 +246,6 @@
   width: 100%;
 }
 
-/* Empty cart */
 .cart-empty {
   min-height: 70vh;
   display: flex;
@@ -279,7 +272,6 @@
   margin-bottom: 10px;
 }
 
-/* Success page */
 .cart-success {
   min-height: 80vh;
   display: flex;
@@ -316,7 +308,6 @@
   max-width: 400px;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
   .cart-layout {
     flex-direction: column;
@@ -341,7 +332,6 @@
   }
 }
 
-/* ── CONFIRMATION PAGE ── */
 .confirm-page {
   background-color: #F5EDD8;
   min-height: 100vh;
@@ -403,7 +393,6 @@
   flex-wrap: wrap;
 }
 
-/* Items block */
 .confirm-items-block {
   flex: 1.4;
   min-width: 300px;
@@ -471,7 +460,6 @@
   white-space: nowrap;
 }
 
-/* Totals */
 .confirm-totals {
   margin-top: 24px;
   border-top: 1px solid #C9A97E44;
@@ -497,7 +485,6 @@
   margin-top: 4px;
 }
 
-/* Details block */
 .confirm-details-block {
   flex: 1;
   min-width: 260px;
@@ -544,7 +531,6 @@
   color: #7A5C3E;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .confirm-body {
     flex-direction: column;

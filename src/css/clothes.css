@@ -1,4 +1,3 @@
-/* ── HERO BANNER ── */
 .clothes-banner {
   background-color: #3B2A1A;
   display: flex;
@@ -52,14 +51,12 @@
   border-radius: 10px;
 }
 
-/* ── SHOP BODY ── */
 .shop-body {
   background-color: #F5EDD8;
   padding: 60px 60px 80px;
   box-sizing: border-box;
 }
 
-/* ── GRID ── */
 .shop-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -68,7 +65,6 @@
   margin: 0 auto;
 }
 
-/* ── CARD ── */
 .shop-card {
   background-color: #fff8f0;
   border-radius: 16px;
@@ -95,7 +91,6 @@
 .shop-grid .shop-card:nth-child(7) { animation-delay: 0.35s; }
 .shop-grid .shop-card:nth-child(8) { animation-delay: 0.40s; }
 
-/* ── CARD IMAGE ── */
 .shop-card-img-wrap {
   position: relative;
   width: 100%;
@@ -130,7 +125,6 @@
   z-index: 2;
 }
 
-/* ── CARD ARROWS ── */
 .card-arrow {
   position: absolute;
   top: 50%;
@@ -165,7 +159,6 @@
 .card-arrow-prev { left: 8px; }
 .card-arrow-next { right: 8px; }
 
-/* ── CARD DOTS ── */
 .card-dots {
   position: absolute;
   bottom: 10px;
@@ -190,7 +183,6 @@
   transform: scale(1.3);
 }
 
-/* ── CARD BODY ── */
 .shop-card-body {
   padding: 20px;
   display: flex;
@@ -220,7 +212,6 @@
   font-style: italic;
 }
 
-/* ── DETAIL VIEW ── */
 .detail-view {
   width: 100%;
   max-width: 1000px;
@@ -248,7 +239,6 @@
   flex-wrap: wrap;
 }
 
-/* ── DETAIL CAROUSEL ── */
 .detail-gallery {
   flex-shrink: 0;
   animation: slideInLeft 0.6s 0.05s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -323,7 +313,6 @@
   transform: scale(1.3);
 }
 
-/* ── DETAIL INFO ── */
 .detail-info {
   flex: 1;
   min-width: 260px;
@@ -417,7 +406,6 @@
   margin-top: 8px;
 }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .clothes-banner {
     flex-direction: column;

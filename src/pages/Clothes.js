@@ -91,7 +91,6 @@ function Clothes() {
       <Navbar />
 
       {selected ? (
-        /* ── DETAIL VIEW ── */
         <div className="shop-body">
           <div className="detail-view">
             <button className="back-btn" onClick={closeDetail}>← Back to all clothes</button>
@@ -147,7 +146,6 @@ function Clothes() {
           </div>
         </div>
       ) : (
-        /* ── GRID VIEW ── */
         <>
           <div className="clothes-banner">
             <div className="clothes-banner-text">

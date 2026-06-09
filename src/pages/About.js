@@ -1,14 +1,15 @@
+import useScrollReveal from '../hooks/useScrollReveal';
 import '../css/pages.css';
 import '../css/about.css';
 import Navbar from '../Components/navbar';
 import Footer from '../Components/footer';
 
 function About() {
+    useScrollReveal();
   return (
     <div className="container">
       <Navbar />
 
-      {/* Hero */}
       <div className="about-hero">
         <div className="about-hero-text">
           <p className="about-label">Our Story</p>
@@ -26,7 +27,6 @@ function About() {
         </div>
       </div>
 
-      {/* Values */}
       <div className="about-values">
         <h2>What we stand for</h2>
         <div className="about-values-grid">
@@ -48,7 +48,6 @@ function About() {
         </div>
       </div>
 
-      {/* Split section */}
       <div className="about-split">
         <div className="about-split-img">
           <img
@@ -70,7 +69,6 @@ function About() {
         </div>
       </div>
 
-      {/* Stats */}
       <div className="about-stats">
         <div className="about-stat">
           <h3>8+</h3>

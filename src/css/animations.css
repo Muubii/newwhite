@@ -1,13 +1,6 @@
-/* ── PAGE FADE IN ── */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeIn {
@@ -16,156 +9,174 @@
 }
 
 @keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
 }
 
-/* ── PAGE WRAPPER ── */
-.page-animate {
-  animation: fadeInUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
 }
 
-/* ── NAVBAR ── */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.04); }
+}
+
+[data-animate] {
+  opacity: 0;
+  transition: opacity 0.01ms, transform 0.01ms;
+}
+
+[data-animate].is-visible {
+  opacity: 1;
+}
+
+[data-animate="fadeInUp"].is-visible {
+  animation: fadeInUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+[data-animate="fadeIn"].is-visible {
+  animation: fadeIn 0.5s ease both;
+}
+
+[data-animate="slideInLeft"].is-visible {
+  animation: slideInLeft 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+[data-animate="slideInRight"].is-visible {
+  animation: slideInRight 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+[data-animate="scaleIn"].is-visible {
+  animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+[data-delay="1"] { animation-delay: 0.05s !important; }
+[data-delay="2"] { animation-delay: 0.12s !important; }
+[data-delay="3"] { animation-delay: 0.20s !important; }
+[data-delay="4"] { animation-delay: 0.28s !important; }
+[data-delay="5"] { animation-delay: 0.36s !important; }
+[data-delay="6"] { animation-delay: 0.44s !important; }
+[data-delay="7"] { animation-delay: 0.52s !important; }
+[data-delay="8"] { animation-delay: 0.60s !important; }
+
 .navbar {
   animation: fadeIn 0.4s ease both;
 }
 
-/* ── HOME HERO CONTENT ── */
-.containerOne__content h1 {
-  animation: fadeInUp 0.7s 0.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+button, .btn, a.contact-btn {
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s ease,
+              box-shadow 0.2s ease,
+              opacity 0.2s ease;
 }
 
-.containerOne__content p {
-  animation: fadeInUp 0.7s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+button:active:not(:disabled),
+.btn:active {
+  transform: scale(0.96);
 }
 
-.containerOne__content button {
-  animation: fadeInUp 0.7s 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+.containerOne button:hover {
+  box-shadow: 0 6px 20px rgba(192, 134, 90, 0.4);
+  transform: translateY(-2px);
 }
 
-/* ── HOME SECTION TWO ── */
-.TextTwo {
-  animation: slideInLeft 0.7s 0.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+.add-cart-btn:not(.disabled):not(.added):hover {
+  box-shadow: 0 6px 20px rgba(192, 134, 90, 0.35);
+  transform: translateY(-2px);
 }
 
-.ImageTwo {
-  animation: slideInRight 0.7s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+.size-btn:hover {
+  transform: translateY(-1px);
 }
 
-/* ── HOME SECTION THREE ── */
-.containerThree h1 {
-  animation: fadeInUp 0.6s 0.05s cubic-bezier(0.16, 1, 0.3, 1) both;
+.back-btn:hover {
+  transform: translateX(-3px);
 }
 
-.threeGrid > div:nth-child(1) {
-  animation: fadeInUp 0.6s 0.1s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-.threeGrid > div:nth-child(2) {
-  animation: fadeInUp 0.6s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-.threeGrid > div:nth-child(3) {
-  animation: fadeInUp 0.6s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-.threeGrid > div:nth-child(4) {
-  animation: fadeInUp 0.6s 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-/* ── SHOP / CLOTHES HERO ── */
-.shop-hero h1 {
-  animation: fadeInUp 0.6s 0.1s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.shop-hero p {
-  animation: fadeInUp 0.6s 0.22s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-/* ── SHOP / CLOTHES CARDS ── */
 .shop-card {
-  animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.shop-grid .shop-card:nth-child(1)  { animation-delay: 0.05s; }
-.shop-grid .shop-card:nth-child(2)  { animation-delay: 0.10s; }
-.shop-grid .shop-card:nth-child(3)  { animation-delay: 0.15s; }
-.shop-grid .shop-card:nth-child(4)  { animation-delay: 0.20s; }
-.shop-grid .shop-card:nth-child(5)  { animation-delay: 0.25s; }
-.shop-grid .shop-card:nth-child(6)  { animation-delay: 0.30s; }
-.shop-grid .shop-card:nth-child(7)  { animation-delay: 0.35s; }
-.shop-grid .shop-card:nth-child(8)  { animation-delay: 0.40s; }
-
-/* ── DETAIL VIEW ── */
-.detail-img {
-  animation: slideInLeft 0.6s 0.05s cubic-bezier(0.16, 1, 0.3, 1) both;
+.shop-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(59, 42, 26, 0.14);
 }
 
-.detail-info {
-  animation: slideInRight 0.6s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+.item:hover {
+  transform: translateY(-4px);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.back-btn {
-  animation: fadeIn 0.4s 0.05s ease both;
+.shop-card-img-wrap,
+.ImageTwo,
+.item {
+  overflow: hidden;
 }
 
-/* ── ABOUT PAGE ── */
-.about-hero-text {
-  animation: slideInLeft 0.7s 0.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+.shop-card-img-wrap img,
+.ImageTwo img,
+.item-img {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.about-hero-img {
-  animation: slideInRight 0.7s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+.shop-card:hover .shop-card-img-wrap img,
+.ImageTwo:hover img,
+.item:hover .item-img {
+  transform: scale(1.06);
 }
 
-.about-value-card:nth-child(1) { animation: fadeInUp 0.6s 0.1s cubic-bezier(0.16, 1, 0.3, 1) both; }
-.about-value-card:nth-child(2) { animation: fadeInUp 0.6s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both; }
-.about-value-card:nth-child(3) { animation: fadeInUp 0.6s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both; }
-
-.about-stat:nth-child(1) { animation: fadeInUp 0.6s 0.1s cubic-bezier(0.16, 1, 0.3, 1) both; }
-.about-stat:nth-child(2) { animation: fadeInUp 0.6s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both; }
-.about-stat:nth-child(3) { animation: fadeInUp 0.6s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both; }
-
-/* ── CONTACT PAGE ── */
-.contact-form {
-  animation: fadeInUp 0.6s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+.nav-links a {
+  position: relative;
+  display: inline-block;
 }
 
-.contact-info {
-  animation: slideInRight 0.6s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background-color: #E8C98A;
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ── FOOTER ── */
-.footer {
-  animation: fadeIn 0.5s 0.1s ease both;
+.nav-links a:hover::after {
+  width: 100%;
 }
 
-/* ── CART PAGE ── */
+.footer-links-vertical a,
+.footer-middle a {
+  position: relative;
+  display: inline-block;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.footer-links-vertical a:hover,
+.footer-middle a:hover {
+  transform: translateX(3px);
+}
+
+.cart-icon-btn:has(.cart-badge) {
+  animation: pulse 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.page-animate {
+  animation: fadeInUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
 .cart-item {
   animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -176,11 +187,9 @@
 .cart-item:nth-child(4) { animation-delay: 0.20s; }
 .cart-item:nth-child(5) { animation-delay: 0.25s; }
 
-/* ── RESPECT REDUCED MOTION ── */
+/* ── REDUCED MOTION ── */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-delay: 0.01ms !important;
     transition-duration: 0.01ms !important;

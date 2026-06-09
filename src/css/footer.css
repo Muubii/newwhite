@@ -1,130 +1,162 @@
 .footer {
+  width: 100%;
   background-color: #2C1F14;
-  padding: 40px 0;
-  display: flex;
-  justify-content: center;
-  width: 100vw;
+  box-sizing: border-box;
 }
 
 .container-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 60px 30px;
+  box-sizing: border-box;
 }
 
+/* ── TOP ROW ── */
 .footer-top {
-  padding-top: 5vw;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  width: 90%;
   align-items: center;
   flex-wrap: wrap;
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(201, 169, 126, 0.15);
 }
 
+/* ── LEFT: logo between two link columns ── */
 .footer-left {
   display: flex;
-  align-items: flex-start;
-  gap: 20px;
+  flex-direction: row;
+  align-items: center;
+  gap: 48px;
 }
 
 .footer-logo {
-  width: 80px;
-  height: 80px;
-  background-color: #7A5C3E;
+  font-size: 3.5rem;
+  color: #E8C98A;
+  line-height: 1;
+  user-select: none;
+  opacity: 0.9;
+  transition: opacity 0.2s, transform 0.3s;
+}
+
+.footer-logo:hover {
+  opacity: 1;
+  transform: rotate(20deg) scale(1.1);
 }
 
 .footer-links-vertical {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 12px;
 }
 
-.footer-links-vertical a,
-.footer-middle a {
-  color: #C9A97E;
+.footer-links-vertical a {
+  color: #B89A72;
   text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
   transition: color 0.2s;
 }
 
-.footer-links-vertical a:hover,
+.footer-links-vertical a:hover {
+  color: #E8C98A;
+}
+
+/* ── MIDDLE: quick links ── */
+.footer-middle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.footer-middle a {
+  color: #B89A72;
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+
 .footer-middle a:hover {
   color: #E8C98A;
 }
 
-.footer-middle {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
 .contact-btn {
-  color: #fff5ed !important;
-  background-color: #C0865A;
-  padding: 8px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background-color 0.2s, transform 0.15s;
+  margin-top: 8px;
+  padding: 9px 22px;
+  border: 1px solid rgba(201, 169, 126, 0.45);
+  border-radius: 2px;
+  color: #E8C98A !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s !important;
 }
 
 .contact-btn:hover {
-  background-color: #A8714A;
-  transform: translateY(-2px);
-  color: #fff5ed !important;
+  background-color: #E8C98A;
+  color: #2C1F14 !important;
+  border-color: #E8C98A;
 }
 
-.footer-under-text h1 {
-  font-size: 9vw;
-  font-weight: 600;
-  color: #E8C98A;
-  margin-top: 30px;
-  margin-bottom: 40px;
+/* ── BOTTOM: brand name ── */
+.footer-under-text {
+  padding-top: 28px;
   text-align: center;
 }
 
-@media (max-width: 992px) {
+.footer-under-text h1 {
+  font-size: 4rem;
+  color: #E8C98A;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  margin: 0;
+  user-select: none;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .container-footer {
+    padding: 40px 24px 24px;
+  }
+
   .footer-top {
     flex-direction: column;
     align-items: center;
-    gap: 30px;
-    padding-top: 20px;
+    text-align: center;
+    gap: 32px;
   }
 
   .footer-left {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .footer-links-vertical {
-    align-items: center;
+    gap: 32px;
   }
 
   .footer-middle {
-    justify-content: center;
-    gap: 20px;
-  }
-}
-
-@media (max-width: 576px) {
-  .footer-logo {
-    width: 60px;
-    height: 60px;
-  }
-
-  .footer-links-vertical a,
-  .footer-middle a {
-    font-size: 0.9rem;
-  }
-
-  .contact-btn {
-    padding: 4px 12px;
-    font-size: 0.9rem;
+    align-items: center;
   }
 
   .footer-under-text h1 {
-    font-size: 12vw;
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-left {
+    gap: 20px;
+  }
+
+  .footer-logo {
+    font-size: 2.5rem;
+  }
+
+  .footer-links-vertical a {
+    font-size: 0.88rem;
+  }
+
+  .footer-under-text h1 {
+    font-size: 1.8rem;
   }
 }

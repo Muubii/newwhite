@@ -42,7 +42,6 @@ function Cart() {
         <Navbar />
         <div className="confirm-page">
 
-          {/* Header */}
           <div className="confirm-header">
             <div className="confirm-check">✓</div>
             <h1>Order Confirmed!</h1>
@@ -55,7 +54,6 @@ function Cart() {
 
           <div className="confirm-body">
 
-            {/* Items */}
             <div className="confirm-items-block">
               <h2>Items ordered</h2>
               <div className="confirm-items">
@@ -72,7 +70,6 @@ function Cart() {
                 ))}
               </div>
 
-              {/* Order total */}
               <div className="confirm-totals">
                 <div className="confirm-total-row">
                   <span>Subtotal</span>
@@ -89,7 +86,6 @@ function Cart() {
               </div>
             </div>
 
-            {/* Delivery details */}
             <div className="confirm-details-block">
               <h2>Delivery details</h2>
               <div className="confirm-detail-card">
@@ -144,7 +140,6 @@ function Cart() {
         ) : (
           <div className="cart-layout">
 
-            {/* LEFT: items */}
             <div className="cart-left">
               <h2 className="cart-section-title">
                 Your Cart <span className="cart-badge">{cart.length}</span>
@@ -183,7 +178,6 @@ function Cart() {
               </div>
             </div>
 
-            {/* RIGHT: checkout */}
             <div className="cart-right">
               <h2 className="cart-section-title">Checkout</h2>
 

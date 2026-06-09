@@ -1,4 +1,3 @@
-/* Hero */
 .contact-hero {
   background-color: #3B2A1A;
   color: #F5EDD8;
@@ -21,7 +20,6 @@
   line-height: 1.7;
 }
 
-/* Body layout */
 .contact-body {
   background-color: #F5EDD8;
   padding: 70px 60px 80px;
@@ -31,7 +29,6 @@
   gap: 60px;
 }
 
-/* Info cards row */
 .contact-info {
   display: flex;
   gap: 24px;
@@ -78,7 +75,6 @@
   line-height: 1.5;
 }
 
-/* Form wrapper */
 .contact-form-wrap {
   width: 100%;
   max-width: 680px;
@@ -163,7 +159,6 @@
   transform: translateY(0);
 }
 
-/* Success state */
 .contact-success {
   display: flex;
   flex-direction: column;
@@ -198,7 +193,6 @@
   line-height: 1.6;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .contact-body {
     padding: 50px 20px 60px;

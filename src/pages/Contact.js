@@ -30,7 +30,6 @@ function Contact() {
 
       <div className="contact-body">
 
-        {/* Info cards */}
         <div className="contact-info">
           <div className="contact-card">
             <div className="contact-card-icon">✉️</div>
@@ -49,7 +48,6 @@ function Contact() {
           </div>
         </div>
 
-        {/* Form */}
         <div className="contact-form-wrap">
           {sent ? (
             <div className="contact-success">

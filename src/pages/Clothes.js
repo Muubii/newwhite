@@ -8,19 +8,16 @@ import Footer from '../Components/footer';
 
 function ShopCard({ item, onOpen }) {
   const [activeImg, setActiveImg] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
   const intervalRef = useRef(null);
 
   const startSlideshow = () => {
     if (item.images.length <= 1) return;
-    setIsHovered(true);
     intervalRef.current = setInterval(() => {
       setActiveImg((i) => (i === item.images.length - 1 ? 0 : i + 1));
     }, 3000);
   };
 
   const stopSlideshow = () => {
-    setIsHovered(false);
     clearInterval(intervalRef.current);
     setActiveImg(0);
   };

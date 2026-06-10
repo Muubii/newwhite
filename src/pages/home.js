@@ -33,7 +33,7 @@ function Home() {
       setActiveSlide((prev) => (prev + 1) % slideImages.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [slideImages.length]);
 
   return (
     <div className="container">

@@ -9,8 +9,8 @@ const items = [
     image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&auto=format&fit=crop',
     images: [
       'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&auto=format&fit=crop',
     ],
   },
   {
@@ -23,8 +23,8 @@ const items = [
     image: 'https://images.unsplash.com/photo-1589310243389-96a5483213a8?w=600&auto=format&fit=crop',
     images: [
       'https://images.unsplash.com/photo-1589310243389-96a5483213a8?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1598032895397-b9472444bf93?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1594938298603-c8148c4b4abe?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1589310243389-96a5483213a8?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1589310243389-96a5483213a8?w=600&auto=format&fit=crop',
     ],
   },
   {
@@ -37,8 +37,8 @@ const items = [
     image: 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop',
     images: [
       'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1560243563-062bfc001d68?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop',
     ],
   },
   {
@@ -51,8 +51,8 @@ const items = [
     image: 'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=600&auto=format&fit=crop',
     images: [
       'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1602810316693-3667c854239a?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=600&auto=format&fit=crop',
     ],
   },
   {
@@ -62,11 +62,11 @@ const items = [
     category: 'Tops',
     sizes: ['S', 'M', 'L', 'XL'],
     description: 'Cozy heavyweight cotton. The kind of hoodie you reach for every day.',
-    image: 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=600&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=600&auto=format&fit=crop',
     images: [
-      'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=600&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1614495640153-72c2f80c2c3a?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=600&auto=format&fit=crop',
     ],
   },
   {
@@ -79,8 +79,8 @@ const items = [
     image: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&auto=format&fit=crop',
     images: [
       'https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1475178626620-a4d074967452?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&auto=format&fit=crop',
     ],
   },
   {
@@ -90,11 +90,11 @@ const items = [
     category: 'Outerwear',
     sizes: ['S', 'M', 'L'],
     description: 'A clean silhouette jacket that elevates any outfit instantly.',
-    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1594938298603-c8148c4b4abe?w=600&auto=format&fit=crop',
     images: [
-      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1519716137558-4c60a6a95f3c?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1594938298603-c8148c4b4abe?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1594938298603-c8148c4b4abe?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1594938298603-c8148c4b4abe?w=600&auto=format&fit=crop',
     ],
   },
   {
@@ -104,11 +104,11 @@ const items = [
     category: 'Tops',
     sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
     description: 'A clean, unbranded sweatshirt in earthy tones. Simple done right.',
-    image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1611911813383-67769b37a149?w=600&auto=format&fit=crop',
     images: [
-      'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1578587018452-892bacefd3f2?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1611911813383-67769b37a149?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1611911813383-67769b37a149?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1611911813383-67769b37a149?w=600&auto=format&fit=crop',
     ],
   },
   {
@@ -118,11 +118,11 @@ const items = [
     category: 'Tops',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     description: 'A refined polo in piqué cotton. Smart casual at its best.',
-    image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=600&auto=format&fit=crop',
     images: [
-      'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1622445275576-721325763afe?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1622445275309-d6f4cfdbb28e?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=600&auto=format&fit=crop',
     ],
   },
   {
@@ -135,8 +135,8 @@ const items = [
     image: 'https://images.unsplash.com/photo-1517445312882-bc9910d016b7?w=600&auto=format&fit=crop',
     images: [
       'https://images.unsplash.com/photo-1517445312882-bc9910d016b7?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1605518216938-7c31b7b14ad0?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1517445312882-bc9910d016b7?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1517445312882-bc9910d016b7?w=600&auto=format&fit=crop',
     ],
   },
   {
@@ -149,8 +149,8 @@ const items = [
     image: 'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=600&auto=format&fit=crop',
     images: [
       'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1548126032-079a0fb0099d?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=600&auto=format&fit=crop',
     ],
   },
   {
@@ -163,10 +163,10 @@ const items = [
     image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&auto=format&fit=crop',
     images: [
       'https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1591561954557-26941169b49e?w=600&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1614179818511-f65577b8e900?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&auto=format&fit=crop',
     ],
   },
 ];
 
-export default items; 
+export default items;

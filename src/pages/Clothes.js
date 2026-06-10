@@ -1,4 +1,5 @@
 import { useState, useContext, useRef, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { CartContext } from '../App';
 import '../css/pages.css';
 import '../css/clothes.css';
@@ -43,7 +44,6 @@ function ShopCard({ item, onOpen }) {
           />
         ))}
         <span className="shop-card-tag">{item.category}</span>
-
         {item.images.length > 1 && (
           <div className="card-dots">
             {item.images.map((_, i) => (
@@ -56,11 +56,9 @@ function ShopCard({ item, onOpen }) {
           </div>
         )}
       </div>
-
       <div className="shop-card-body">
         <h3>{item.name}</h3>
         <p className="shop-card-price">{item.price}</p>
-        <p className="shop-card-hint">Click to view details</p>
       </div>
     </div>
   );
@@ -70,11 +68,22 @@ const CATEGORIES = ['All', 'Tops', 'Bottoms', 'Outerwear', 'Accessories'];
 
 function Clothes() {
   const { addToCart } = useContext(CartContext);
+  const location = useLocation();
   const [selected, setSelected] = useState(null);
   const [activeImg, setActiveImg] = useState(0);
   const [selectedSize, setSelectedSize] = useState(null);
   const [added, setAdded] = useState(false);
   const [activeCategory, setActiveCategory] = useState('All');
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const cat = params.get('category');
+    if (cat && CATEGORIES.includes(cat)) {
+      setActiveCategory(cat);
+    } else {
+      setActiveCategory('All');
+    }
+  }, [location.search]);
 
   const filteredItems = activeCategory === 'All'
     ? items
@@ -114,22 +123,49 @@ function Clothes() {
       {selected ? (
         <div className="shop-body">
           <div className="detail-view">
-            <button className="back-btn" onClick={closeDetail}>← Back to all clothes</button>
+            <button className="back-btn" onClick={closeDetail}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+              Back to all clothes
+            </button>
+
             <div className="detail-inner">
               <div className="detail-gallery">
-                <div className="detail-carousel">
-                  <button className="carousel-btn carousel-prev" onClick={prevImg} aria-label="Previous">‹</button>
-                  <img src={selected.images[activeImg]} alt={selected.name} className="detail-main-img" />
-                  <button className="carousel-btn carousel-next" onClick={nextImg} aria-label="Next">›</button>
-                  <div className="carousel-dots">
-                    {selected.images.map((_, i) => (
-                      <span
+                <div className="detail-carousel-wrap">
+
+                  {/* Thumbnail strip */}
+                  <div className="detail-thumbs">
+                    {selected.images.map((img, i) => (
+                      <button
                         key={i}
-                        className={`carousel-dot ${activeImg === i ? 'active' : ''}`}
+                        className={`detail-thumb ${activeImg === i ? 'active' : ''}`}
                         onClick={() => setActiveImg(i)}
-                      />
+                      >
+                        <img src={img} alt={`${selected.name} ${i + 1}`} />
+                      </button>
                     ))}
                   </div>
+
+                  {/* Main image */}
+                  <div className="detail-carousel">
+                    <button className="carousel-btn carousel-prev" onClick={prevImg} aria-label="Previous">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="15 18 9 12 15 6" />
+                      </svg>
+                    </button>
+
+                    <img src={selected.images[activeImg]} alt={selected.name} className="detail-main-img" />
+
+                    <button className="carousel-btn carousel-next" onClick={nextImg} aria-label="Next">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="9 18 15 12 9 6" />
+                      </svg>
+                    </button>
+
+                    <span className="carousel-counter">{activeImg + 1} / {selected.images.length}</span>
+                  </div>
+
                 </div>
               </div>
 
@@ -173,14 +209,8 @@ function Clothes() {
               <p>Browse our latest arrivals — timeless pieces designed for the way you live.</p>
             </div>
             <div className="clothes-banner-imgs">
-              <img
-                src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=500&auto=format&fit=crop"
-                alt="Collection preview"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=500&auto=format&fit=crop"
-                alt="Collection preview 2"
-              />
+              <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=500&auto=format&fit=crop" alt="Collection preview" />
+              <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=500&auto=format&fit=crop" alt="Collection preview 2" />
             </div>
           </div>
 
@@ -197,7 +227,7 @@ function Clothes() {
           </div>
 
           <div className="shop-body">
-            <div className="shop-grid">
+            <div className="shop-grid" key={activeCategory}>
               {filteredItems.map((item) => (
                 <ShopCard key={item.id} item={item} onOpen={openDetail} />
               ))}

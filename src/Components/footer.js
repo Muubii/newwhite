@@ -23,9 +23,9 @@ function Footer() {
 
           <div className="footer-middle">
             <Link to="/clothes">New arrivals</Link>
-            <Link to="/clothes">Men</Link>
-            <Link to="/clothes">Women</Link>
-            <Link to="/clothes">Sale</Link>
+            <Link to="/clothes?category=Tops">Tops</Link>
+            <Link to="/clothes?category=Bottoms">Bottoms</Link>
+            <Link to="/clothes?category=Outerwear">Outerwear</Link>
             <Link to="/contact" className="contact-btn">Contact</Link>
           </div>
         </div>

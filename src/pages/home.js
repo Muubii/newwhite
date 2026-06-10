@@ -4,27 +4,16 @@ import '../css/home.css';
 import Navbar from '../Components/navbar';
 import Footer from '../Components/footer';
 import vid from '../source/vid.mp4';
+import items from '../data/items';
 
 function Home() {
+  const featuredIds = [1, 3, 4, 2];
+  const featuredItems = featuredIds.map(id => items.find(item => item.id === id));
 
-  const slideImages = [
-    {
-      src: 'https://images.unsplash.com/photo-1589310243389-96a5483213a8?w=800&auto=format&fit=crop',
-      alt: 'Classic Overshirt',
-    },
-    {
-      src: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&auto=format&fit=crop',
-      alt: 'Essential Tee',
-    },
-    {
-      src: 'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=800&auto=format&fit=crop',
-      alt: 'Linen Shirt',
-    },
-    {
-      src: 'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=800&auto=format&fit=crop',
-      alt: 'Slim Chinos',
-    },
-  ];
+  const slideImages = featuredItems.map(item => ({
+    src: item.image,
+    alt: item.name,
+  }));
 
   const [activeSlide, setActiveSlide] = useState(0);
 
@@ -66,7 +55,6 @@ function Home() {
         <div className="ImageTwo">
           <img
             src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=800&auto=format&fit=crop"
-            alt="NewWhite collection"
           />
         </div>
       </div>
@@ -113,45 +101,21 @@ function Home() {
             </div>
 
             <div className="col-items">
-              {[
-                {
-                  img: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&auto=format&fit=crop',
-                  name: 'Essential Tee',
-                  price: '€24.99',
-                  tag: 'Bestseller',
-                },
-                {
-                  img: 'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=300&auto=format&fit=crop',
-                  name: 'Slim Chinos',
-                  price: '€39.99',
-                  tag: 'New',
-                },
-                {
-                  img: 'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=300&auto=format&fit=crop',
-                  name: 'Linen Shirt',
-                  price: '€34.99',
-                  tag: null,
-                },
-                {
-                  img: 'https://images.unsplash.com/photo-1589310243389-96a5483213a8?w=300&auto=format&fit=crop',
-                  name: 'Classic Overshirt',
-                  price: '€49.99',
-                  tag: null,
-                },
-              ].map((item, i) => (
+              {featuredItems.map((item, i) => (
                 <Link
-                  to="/clothes"
-                  key={i}
+                  to={`/clothes?item=${item.id}`}
+                  key={item.id}
                   className="col-item"
                   style={{ textDecoration: 'none' }}
                 >
                   <div className="col-item-img">
-                    <img src={item.img} alt={item.name} />
+                    <img src={item.image} alt={item.name} />
                   </div>
                   <div className="col-item-info">
                     <div className="col-item-top">
                       <span className="col-item-name">{item.name}</span>
-                      {item.tag && <span className="col-item-tag">{item.tag}</span>}
+                      {i === 0 && <span className="col-item-tag">Bestseller</span>}
+                      {i === 1 && <span className="col-item-tag">New</span>}
                     </div>
                     <span className="col-item-price">{item.price}</span>
                   </div>

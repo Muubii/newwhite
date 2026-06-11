@@ -55,8 +55,16 @@ function Home() {
         <div className="ImageTwo">
           <img
             src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=800&auto=format&fit=crop"
+            alt="Stylish person wearing minimalist fashion"
           />
         </div>
+      </div>
+
+      {/* ── BANNER STRIP ── */}
+      <div className="banner-strip">
+        {['Free shipping over €75', 'New arrivals every week', 'Sustainable materials', 'Easy 30-day returns'].map((t, i) => (
+          <span key={i} className="banner-strip-item">{t}</span>
+        ))}
       </div>
 
       {/* ── COLLECTION ── */}
@@ -130,13 +138,6 @@ function Home() {
           </div>
 
         </div>
-      </div>
-
-      {/* ── BANNER STRIP ── */}
-      <div className="banner-strip">
-        {['Free shipping over €75', 'New arrivals every week', 'Sustainable materials', 'Easy 30-day returns'].map((t, i) => (
-          <span key={i} className="banner-strip-item">{t}</span>
-        ))}
       </div>
 
       <Footer />

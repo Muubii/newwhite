@@ -517,17 +517,19 @@
 ══════════════════════════════ */
 .banner-strip {
   width: 100%;
-  background-color: #2C1F14;
+  background-color: #EDE4D4;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   padding: 18px 20px;
   box-sizing: border-box;
+  border-top: 1px solid rgba(59, 42, 26, 0.12);
+  border-bottom: 1px solid rgba(59, 42, 26, 0.12);
 }
 
 .banner-strip-item {
-  color: #C9A97E;
+  color: #7A5C3E; 
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -541,7 +543,7 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  color: #7A5C3E;
+  color: #C9A97E;
 }
 
 /* ══════════════════════════════
